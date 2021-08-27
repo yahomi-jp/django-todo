@@ -2,7 +2,40 @@
 {% load django_bootstrap5 %}
 
 {% block main %}
-<div class="welcome">
-  <h1>test</h1>
-</div>
-{% endblock main %}
+  <main>
+    <header>
+      <h1>Todos</h1>
+      <form action="" method="post">
+        {% csrf_token %}
+        <span class="purge">Purge
+        </span>
+      </header>
+
+      <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="Type new todo.">
+      </form>
+
+      <ul>
+
+        <li>
+          <form action="" method="post">
+            {% csrf_token %}
+            <input type="checkbox" is_done="is_done">
+            <input type="hidden" name="id" value="<id>">
+          </form>
+
+          <span class="">
+            title
+          </span>
+
+          <form action="" method="post" class="deleteform">
+            {% csrf_token %}
+            <span class="delete">x</span>
+            <input type="hidden" name="id" value="<id>">
+          </form>
+
+        </li>
+      </ul>
+    </main>
+  {% endblock main %}

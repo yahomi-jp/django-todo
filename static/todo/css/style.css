@@ -3,12 +3,4 @@ body {
   background-color: rgb(241, 241, 237);
 }
 
-.welcome {
-  color: white;
-  padding: 3rem 0;
-  margin-bottom: 2rem;
-  background-color: #484e60;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
+
