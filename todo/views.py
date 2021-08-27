@@ -26,4 +26,4 @@ def todo_new(request):
             todo.save()
             return redirect(top)
     else:
-        return HttpResponseForbidden('sippaiyade')
+        return HttpResponseForbidden('正規の手続きを踏んでください')

@@ -15,20 +15,22 @@
 
       <ul>
         {% for todo in todos %}
-          <li>
-            <input type="checkbox">
-            <span>
-              {{ todo.name }}
-            </span>
-            <form action="" method="post" class="deleteform">
-              {% csrf_token %}
-              <span class="delete">x</span>
-              <input type="hidden" name="id" value="{{ todo.id }}">
-            </form>
-          </li>
+          {% if todo.created_by_id == user.id %}
+            <li>
+              <input type="checkbox">
+              <span>
+                {{ todo.name }}
+              </span>
+              <form action="" method="post" class="deleteform">
+                {% csrf_token %}
+                <span class="delete">x</span>
+                <input type="hidden" name="id" value="{{ todo.id }}">
+              </form>
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
-    
-  </main>
+
+    </main>
   {% endif %}
 {% endblock main %}
