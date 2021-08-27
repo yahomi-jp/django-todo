@@ -1,6 +1,46 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(241, 241, 237);
+  text-align: center;
 }
 
+header {
+  margin: 24px;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin: 0 0 16px 0;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.deleteform {
+  margin-left: auto;
+  padding-left: 8px;
+
+}
 
