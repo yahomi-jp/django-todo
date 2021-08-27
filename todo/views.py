@@ -1,7 +1,7 @@
 from django.http.response import HttpResponseForbidden
 from todo.models import Todo
 from todo.form import TodoForm
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -27,3 +27,17 @@ def todo_new(request):
             return redirect(top)
     else:
         return HttpResponseForbidden('正規の手続きを踏んでください')
+
+@login_required
+def todo_delete(request, todo_id):
+    if request.method == 'POST':
+        todo = get_object_or_404(Todo, pk=todo_id)
+        if todo.created_by.id == request.user:
+            todo.delete()
+    form = TodoForm
+    todos = Todo.objects.all().order_by('-id')
+    context = {
+      'todos': todos,
+      'form': form,
+    }
+    return render(request, 'todo/top.html', context)

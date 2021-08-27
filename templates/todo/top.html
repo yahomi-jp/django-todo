@@ -21,10 +21,9 @@
               <span>
                 {{ todo.name }}
               </span>
-              <form action="" method="post" class="deleteform">
+              <form action="{% url 'delete' todo.id %}" method="post" class="deleteform">
                 {% csrf_token %}
-                <span class="delete">x</span>
-                <input type="hidden" name="id" value="{{ todo.id }}">
+                <button class="delete">x</button>
               </form>
             </li>
           {% endif %}
