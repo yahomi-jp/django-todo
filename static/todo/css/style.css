@@ -24,6 +24,7 @@ ul {
 }
 
 li {
+  font-size: large;
   display: flex;
   margin-bottom: 8px;
 }
@@ -36,11 +37,13 @@ input[type="text"] {
 
 input[type="checkbox"] {
   margin-right: 8px;
+  margin-top: 1%;
 }
 
 .deleteform {
   margin-left: auto;
   padding-left: 8px;
+  margin-right: 36px;
 
 }
 

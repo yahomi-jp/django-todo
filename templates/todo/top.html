@@ -5,33 +5,28 @@
   <main>
     <header>
       <h1>Todos</h1>
-      </header>
+    </header>
 
-      <form action="" method="post">
-        {% csrf_token %}
-        <input type="text" name="title" placeholder="Type new todo.">
-      </form>
+    <form action="" method="post">
+      {% csrf_token %}
+      <input type="text" name="title" placeholder="Type new todo">
+    </form>
 
-      <ul>
+    <ul>
 
-        <li>
-          <form action="" method="post">
-            {% csrf_token %}
-            <input type="checkbox" is_done="is_done">
-            <input type="hidden" name="id" value="<id>">
-          </form>
+      <li>
+          <input type="checkbox">
+        <span class="">
+          title
+        </span>
 
-          <span class="">
-            title
-          </span>
+        <form action="" method="post" class="deleteform">
+          {% csrf_token %}
+          <span class="delete">x</span>
+          <input type="hidden" name="id" value="<id>">
+        </form>
 
-          <form action="" method="post" class="deleteform">
-            {% csrf_token %}
-            <span class="delete">x</span>
-            <input type="hidden" name="id" value="<id>">
-          </form>
-
-        </li>
-      </ul>
-    </main>
-  {% endblock main %}
+      </li>
+    </ul>
+  </main>
+{% endblock main %}
