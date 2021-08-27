@@ -1,5 +1,6 @@
+from todo import views
 from django.urls import path
-
+from . import views
 urlpatterns = [
-    path('',),
+    path('new/',views.todo_new, name='new'),
 ]
