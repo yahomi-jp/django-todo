@@ -8,7 +8,7 @@
         <h1>Todos</h1>
       </header>
 
-      <form action="{% url 'new' %}" method="post">
+      <form action="{% url 'todo:new' %}" method="post" class="text-form">
         {% csrf_token %}
         {% bootstrap_form form %}
       </form>
@@ -21,9 +21,15 @@
               <span>
                 {{ todo.name }}
               </span>
-              <form action="{% url 'delete' todo.id %}" method="post" class="deleteform">
+
+              <form action="{% url 'todo:detail' todo.id %}" method="post" class="detailform">
                 {% csrf_token %}
-                <button class="delete">x</button>
+                <button class="edit">Edit</button>
+              </form>
+              |
+              <form action="{% url 'todo:delete' todo.id %}" method="post" class="deleteform">
+                {% csrf_token %}
+                <button class="delete">Delete</button>
               </form>
             </li>
           {% endif %}

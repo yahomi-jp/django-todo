@@ -31,7 +31,7 @@ li {
 
 input[type="text"] {
   width: 100%;
-  padding: 8px;
+  padding: auto;
   margin-bottom: 16px;
 }
 
@@ -41,9 +41,21 @@ input[type="checkbox"] {
 }
 
 .deleteform {
+  margin-right: 36px;
+}
+
+.detailform {
   margin-left: auto;
   padding-left: 8px;
-  margin-right: 36px;
+}
 
+.delete, .edit {
+  border: none;
+  color: rgb(170, 175, 180);
+}
+
+
+.delete:hover, .edit:hover {
+  color: #484e60;
 }
 

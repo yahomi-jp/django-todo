@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block main %}
+  {% if user.is_authenticated %}
+    <main>
+      <header>
+        <h1>Todos-Edit</h1>
+      </header>
+
+      <form action="{% url 'todo:edit' todo.id %}" method="post" class="text-form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% bootstrap_button type='submit' content='保存' %}
+      </form>
+
+    </main>
+  {% endif %}
+{% endblock main %}
