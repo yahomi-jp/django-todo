@@ -131,4 +131,12 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
 
-django_heroku.settings(locals())
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
+# Debug=False no settei
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
