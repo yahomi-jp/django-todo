@@ -32,12 +32,7 @@ def todo_new(request):
 def todo_delete(request, todo_id):
     if request.method == 'POST':
         todo = get_object_or_404(Todo, pk=todo_id)
-        if todo.created_by.id == request.user:
+        if todo.created_by.id == request.user.id:
             todo.delete()
-    form = TodoForm
-    todos = Todo.objects.all().order_by('-id')
-    context = {
-      'todos': todos,
-      'form': form,
-    }
-    return render(request, 'todo/top.html', context)
+    
+    return redirect(top)
