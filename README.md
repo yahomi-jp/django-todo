@@ -6,7 +6,9 @@
 <br><br>
 
 # 実際のアプリ→[django-todo](https://django-todo-app-yahomi.herokuapp.com/)
+<img src="demo.png">
 <br><br>
+
 ## 使用方法
   - 左上の新規登録からユーザー登録をしたのちにログイン
   - トップのフォームに登録したいTodoを入力し、Enter
