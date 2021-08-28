@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-y)-f^*617&e(2p!_&=x$s*3zf41i%d5%(zjng%g&(*&68(*-xm'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -138,5 +138,6 @@ except ImportError:
 
 # Debug=False no settei
 if not DEBUG:
+    SECRET_KEY = os.environ['SECRET_KEY']
     import django_heroku
     django_heroku.settings(locals())
