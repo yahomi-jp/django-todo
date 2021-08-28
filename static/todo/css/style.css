@@ -35,10 +35,6 @@ input[type="text"] {
   margin-bottom: 16px;
 }
 
-input[type="checkbox"] {
-  margin-right: 8px;
-  margin-top: 1%;
-}
 
 .deleteform {
   margin-right: 36px;
